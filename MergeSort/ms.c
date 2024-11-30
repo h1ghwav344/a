@@ -42,11 +42,3 @@ void mergeSort(int *arr, int start, int end)
         mergeSort(arr,mid+1,end);
         _merge(arr,start,mid,end);
 }
-
-int main()
-{
-        int a[] = {3,4,1,2,5,9,6,7,8,0};
-        int as = sizeof(a) / sizeof(a[0]);
-        int end = as - 1;
-        mergeSort(a,0,end);
-}
