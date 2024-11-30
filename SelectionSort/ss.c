@@ -1,35 +1,27 @@
-void selectionSort(int *a, int as)
+void selectionSort(int *a)
 {
-        if (as == 1)
+        int arrlen = sizeof(a) / sizeof(a[0]);
+        if (arrlen <= 1)
                 return;
-        
+
         int buffer;
         int j;
         int min;
-        int mini;
+        int minIndex;
 
-        for (int i = 0; i < (as - 1); i++) {
+        for (int i = 0; i < (arrlen - 1); i++) {
                 buffer = a[i]; 
                 j = i + 1;
                 min = a[j];
-                mini = j;
-                while (j < as) {
+                minIndex = j;
+                while (j < arrlen) {
                         if (a[j] < min) {
                                 min = a[j];
-                                mini = j;
+                                minIndex = j;
                         }
                         j++;
                 }
                 a[i] = min;
-                a[mini] = buffer;
+                a[minIndex] = buffer;
         }
-}
-
-
-void main()
-{
-        int a[] = {5,2,1,9,1,8};
-        int as = sizeof(a) / sizeof(int);
-
-        selectionSort(a,as);
 }
