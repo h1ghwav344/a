@@ -1,1 +1,6 @@
 **/bin/
+*.out
+*.o
+*.s
+*.elf
+test.c
